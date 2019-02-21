@@ -42,5 +42,5 @@ jobs:
     - run: gradle test run
 
     - store_artifacts:
-        path: /pipelines.json
-        destination: pipelines.json
+        path: /build/pipelines
+        

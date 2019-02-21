@@ -8,7 +8,9 @@ import java.io.File
 
 class PipelineJson {
     fun writeFiles() {
-        File("pipelines.json").writeText(pipelines.toJson())
+        val pipelineJsonFile = File("build/pipelines/pipelines.json")
+        pipelineJsonFile.parentFile.mkdirs()
+        pipelineJsonFile.writeText(pipelines.toJson())
     }
 }
 
