@@ -40,3 +40,7 @@ jobs:
 
     # run tests!
     - run: gradle test run
+
+    - store_artifacts:
+        path: /pipelines.json
+        
