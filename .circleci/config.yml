@@ -38,11 +38,10 @@ jobs:
         - ~/.gradle
         key: v1-dependencies-{{ checksum "build.gradle" }}
 
-    - run: echo $REPO_ID
-
-    # run tests!
     - run: gradle test run
 
     - store_artifacts:
         path: build/pipelines
         destination: pipelines
+
+    - run: echo "https://circleci.com/api/v1.1/project/github/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts/${CIRCLE_NODE_INDEX}/pipelines/pipelines.json?branch=${CIRCLE_BRANCH}&filter=successful"
