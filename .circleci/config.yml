@@ -38,6 +38,8 @@ jobs:
         - ~/.gradle
         key: v1-dependencies-{{ checksum "build.gradle" }}
 
+    - run: echo $REPO_ID
+
     # run tests!
     - run: gradle test run
 
